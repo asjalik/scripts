@@ -30,3 +30,5 @@ expect {
 send_user "\nPassword is correct\n"
 send "exit\r"
 close
+
+#Run it: ./lookforpw.exp <username> <password> <hostname/oip>

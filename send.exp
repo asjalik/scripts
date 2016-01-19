@@ -2,3 +2,6 @@
 set timeout 10
 expect "hello"
 send "world"
+
+#Run it: ./send.exp <enter>
+<type: hello>
