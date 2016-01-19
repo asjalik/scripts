@@ -1,0 +1,13 @@
+#!/usr/bin/expect
+trap {
+ set rows [stty rows]
+ set cols [stty columns]
+ stty rows $rows columns $cols < $spawn_out(slave,name) 
+} WINCH
+
+spawn ssh -t -q [lindex $argv 0]@[lindex $argv 1] "sudo -i"
+expect "password for [lindex $argv 0]:"
+send "<user_password>\r"
+interact
+
+#run it: ./sudo <username> <host>
